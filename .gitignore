@@ -61,6 +61,10 @@ docs/_build/
 target/
 
 # The followings are the customized .gitignore
-*.prototxt
-*.caffemodel
-*.json
+illust2vec*.prototxt
+illust2vec*.caffemodel
+illust2vec*.json
+
+output/
+work/
+images/
