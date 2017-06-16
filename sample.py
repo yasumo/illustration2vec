@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import chainer
 import i2v
 import MyJson
 import os
@@ -46,7 +47,7 @@ def createInitTagArray(rootPath,filePath):
 
   for matched in re.findall(pattern,text):
     #for windows
-    matchedList.append(unicode(matched, 'cp932'))
+    matchedList.append(matched)
 
   return matchedList
 
@@ -109,7 +110,7 @@ for filePath in inputFiles:
   tagList = convertTag2Array(targetJson,dictionaryJson,initArray)
   root, ext = os.path.splitext(filePath)
   outputFileName = md5(filePath)
-  dirName = unicode(outputDir, 'cp932') + u"/"+ array2str(tagList,u"/")
+  dirName = outputDir + u"/"+ array2str(tagList,u"/")
   outputFilePath = dirName + "/" + outputFileName + ext
   time.sleep(0.05)
   #フォルダが無かったら作成してコピー

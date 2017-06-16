@@ -4,11 +4,11 @@ import json
 class MyJson:
     def __init__(self,filePath):
         # jsonデータを読み込んだファイルオブジェクトからPythonデータを作成
-        self.f = open(filePath)
+        self.f = open(filePath,encoding='utf8')
         self.data = json.load(self.f)
 
     def getValue(self, key):
-      if(self.data.has_key(key)):
+      if(key in self.data):
         return self.data[key];
       else:
         #todo ログ
